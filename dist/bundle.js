@@ -11,15 +11,17 @@ exports.Str = void 0;
 const replace_1 = __webpack_require__(2);
 class Str {
     constructor(name, content = "") {
+        window.variables.push({
+            name: name,
+            content: content,
+        });
         this.name = name;
         this.content = content;
         replace_1.replace(this.name, this.content);
-        window.variables[this.name] = content;
     }
     set(content) {
         this.content = content;
         replace_1.replace(this.name, this.content);
-        window.variables[this.name] = content;
     }
     if(state, callback) {
         if (this.content === state) {
@@ -92,17 +94,28 @@ exports.Str = Str;
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.replace = void 0;
 const replace = (name, content) => {
-    const searchKey = `{{ ${name} }}`;
-    document.body.innerHTML = window.initialHTML.replaceAll(searchKey, content);
-    const funcs = window.initialHTML.match(/\{\{\s\(varia\)=>{[a-zA-Z0-9\W]*}\s\}\}/g);
-    if (funcs === null)
+    let html = window.initialHTML;
+    window.variables.forEach((element, i) => {
+        if (element.name === name) {
+            html = html.replaceAll(`{{ ${name} }}`, content);
+            window.variables[i].content = content;
+        }
+        html = html.replaceAll(`{{ ${element.name} }}`, element.content);
+    });
+    const reg = new RegExp(`\\{\\{\\s\\(${name}\\)=>{?[a-zA-Z0-9\\W]*?}?\\s\\}\\}`, "g");
+    const funcs = window.initialHTML.match(reg);
+    if (funcs === null) {
+        document.body.innerHTML = html;
         return content;
+    }
     funcs.forEach((func) => {
         let onlyfunc = func.slice(2, func.length - 2);
-        console.log(func);
         const res = eval(`const func=${onlyfunc};func("${content}")`);
-        window.initialHTML = window.initialHTML.replace(func, res);
+        console.log(window.initialHTML.replaceAll(func, res));
+        html = html.replaceAll(func, res);
     });
+    document.body.innerHTML = html;
+    return content;
 };
 exports.replace = replace;
 
@@ -144,7 +157,7 @@ Object.defineProperty(exports, "__esModule", ({ value: true }));
 const string_1 = __webpack_require__(1);
 const replace_1 = __webpack_require__(2);
 window.initialHTML = document.body.innerHTML;
-window.variables = {};
+window.variables = [];
 window.Str = string_1.Str;
 window.replace = replace_1.replace;
 

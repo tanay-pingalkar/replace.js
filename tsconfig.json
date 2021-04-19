@@ -4,7 +4,6 @@
     "noImplicitAny": true,
     "module": "commonjs",
     "target": "esnext",
-    "allowJs": true,
     "sourceMap": true
   },
   "included": ["./src"]

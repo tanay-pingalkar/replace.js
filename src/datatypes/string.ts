@@ -1,20 +1,22 @@
 import { replace } from "../replace";
 
 export class Str {
+  ifResult: boolean;
   name: string;
   content: string;
-  ifResult: boolean;
   constructor(name: string, content: string = "") {
+    window.variables.push({
+      name: name,
+      content: content,
+    });
     this.name = name;
     this.content = content;
     replace(this.name, this.content);
-    window.variables[this.name] = content;
   }
 
   set(content: string) {
     this.content = content;
     replace(this.name, this.content);
-    window.variables[this.name] = content;
   }
 
   if(state: string, callback: Function | string): boolean {

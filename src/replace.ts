@@ -1,16 +1,28 @@
 export const replace = (name: string, content: any) => {
-  const searchKey = `{{ ${name} }}`;
-  document.body.innerHTML = window.initialHTML.replaceAll(searchKey, content);
-
-  const funcs = window.initialHTML.match(
-    /\{\{\s\(varia\)=>{[a-zA-Z0-9\W]*}\s\}\}/g
+  let html: string = window.initialHTML;
+  window.variables.forEach((element, i) => {
+    if (element.name === name) {
+      html = html.replaceAll(`{{ ${name} }}`, content);
+      window.variables[i].content = content;
+    }
+    html = html.replaceAll(`{{ ${element.name} }}`, element.content);
+  });
+  const reg = new RegExp(
+    `\\{\\{\\s\\(${name}\\)=>{?[a-zA-Z0-9\\W]*?}?\\s\\}\\}`,
+    "g"
   );
-  if (funcs === null) return content;
+  const funcs = window.initialHTML.match(reg);
+  if (funcs === null) {
+    document.body.innerHTML = html;
+    return content;
+  }
 
   funcs.forEach((func) => {
     let onlyfunc = func.slice(2, func.length - 2);
-    console.log(func);
     const res = eval(`const func=${onlyfunc};func("${content}")`);
-    window.initialHTML = window.initialHTML.replace(func, res);
+    console.log(window.initialHTML.replaceAll(func, res));
+    html = html.replaceAll(func, res);
   });
+  document.body.innerHTML = html;
+  return content;
 };
