@@ -5,8 +5,7 @@
     "module": "commonjs",
     "target": "esnext",
     "allowJs": true,
-    "sourceMap": true,
-    "types": ["./src/types/global.d.ts"]
+    "sourceMap": true
   },
   "included": ["./src"]
 }
