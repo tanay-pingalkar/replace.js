@@ -8,10 +8,12 @@ export const replace = (name: string, content: any) => {
     html = html.replaceAll(`{{ ${element.name} }}`, element.content);
   });
   const reg = new RegExp(
-    `\\{\\{\\s\\(${name}\\)=>{?[a-zA-Z0-9\\W]*?}?\\s\\}\\}`,
+    `\\{\\{[\\s\\n]*?\\(${name}\\)=>[\\w\\W]*?\\s\\}\\}`,
     "g"
   );
+
   const funcs = window.initialHTML.match(reg);
+  console.log(funcs, reg);
   if (funcs === null) {
     document.body.innerHTML = html;
     return content;
@@ -19,6 +21,7 @@ export const replace = (name: string, content: any) => {
 
   funcs.forEach((func) => {
     let onlyfunc = func.slice(2, func.length - 2);
+    console.log(onlyfunc);
     const res = eval(`const func=${onlyfunc};func("${content}")`);
     console.log(window.initialHTML.replaceAll(func, res));
     html = html.replaceAll(func, res);
