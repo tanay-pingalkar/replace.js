@@ -4,13 +4,6 @@
 
 ![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/example/logo.svg)
 
-## setup
-
-fork the repo and clone it <br>
-run `yarn install` <br>
-then `yarn build` <br>
-got to `examples` and start index.html
-
 ## index.html
 
 ```html
@@ -99,3 +92,12 @@ condition will also run.
 }
 }}
 ```
+## setting up on local machine
+fork the repo and clone it <br>
+run `yarn install` <br>
+then `yarn build` <br>
+got to `examples` and start index.html
+
+## philosophy
+the main goal i have to achieve making this library is to make it simple, lightweight and reactive. The name of the library tells the core of the library. It just
+replace `{{ variable_name }}` by your given content  in  document.body.innerHTML. Thats how it is reactive and you dont have getElementById every where.
