@@ -83,13 +83,14 @@ async function main() {
 main();
 ```
 thats it....<br>
-as you see
+as you see this is how conditions works in replace.js, whenever you will change value of `profile_photo` by `profile_photo.set()`, the following
+condition will also run.
 ``` javascript
 {{ 
   (profile_photo)=>(profile_photo==='loading') ? './logo.svg' : profile_photo
 }}
 ```
-this is how conditions works in replace.js
+
 
 ```javscript
 {{
