@@ -1,6 +1,8 @@
-# replace.js
+# Replace.js
 
-a lightweight reactive frontend library
+## a lightweight reactive frontend library
+
+![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/example/logo.svg)
 
 ## setup
 
