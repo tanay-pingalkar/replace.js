@@ -9,8 +9,10 @@
     <title>Replace.js</title>
   </head>
   <body>
-    <h1 class="{{ var }}">{{ var }}</h1>
-    <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
+    <h1 class="{{ varia }}">{{ varia }}</h1>
+    <button onclick="clicko()" class="{{ (varia)=>{ return varia } }}">
+      this is {{ varia }}
+    </button>
     <script src="../dist/bundle.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
   </body>

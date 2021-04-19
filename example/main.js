@@ -1,6 +1,9 @@
-const varia = new Str("var", "good");
+const varia = new Str(
+  "varia" /* name of variable*/,
+  "good" /* content of variable*/
+);
 
 function clicko() {
-  varia.if("good", "bad");
+  varia.if("good" /* condition*/, "bad" /* callback*/);
   varia.elif("bad", "good");
 }

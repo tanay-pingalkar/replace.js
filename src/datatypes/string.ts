@@ -60,4 +60,17 @@ export class Str {
     }
     return false;
   }
+  get val(): string {
+    return this.content;
+  }
+  slice(start: number, end?: number) {
+    if (end) this.set(this.content.slice(start, end));
+    else this.set(this.content.slice(start));
+  }
+  replace(keyword: string, content: string) {
+    this.set(this.content.replace(keyword, content));
+  }
+  replaceAll(keyword: string, content: string) {
+    this.set(this.content.replaceAll(keyword, content));
+  }
 }

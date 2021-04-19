@@ -65,6 +65,21 @@ class Str {
         }
         return false;
     }
+    get val() {
+        return this.content;
+    }
+    slice(start, end) {
+        if (end)
+            this.set(this.content.slice(start, end));
+        else
+            this.set(this.content.slice(start));
+    }
+    replace(keyword, content) {
+        this.set(this.content.replace(keyword, content));
+    }
+    replaceAll(keyword, content) {
+        this.set(this.content.replaceAll(keyword, content));
+    }
 }
 exports.Str = Str;
 
@@ -79,7 +94,15 @@ exports.replace = void 0;
 const replace = (name, content) => {
     const searchKey = `{{ ${name} }}`;
     document.body.innerHTML = window.initialHTML.replaceAll(searchKey, content);
-    return content;
+    const funcs = window.initialHTML.match(/\{\{\s\(varia\)=>{[a-zA-Z0-9\W]*}\s\}\}/g);
+    if (funcs === null)
+        return content;
+    funcs.forEach((func) => {
+        let onlyfunc = func.slice(2, func.length - 2);
+        console.log(func);
+        const res = eval(`const func=${onlyfunc};func("${content}")`);
+        window.initialHTML = window.initialHTML.replace(func, res);
+    });
 };
 exports.replace = replace;
 
