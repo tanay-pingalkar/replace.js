@@ -1,6 +1,12 @@
 # replace.js
 a lightweight reactive frontend library
 
+
+## setup
+fork the repo and clone it <br>
+run `yarn install` <br>
+then `yarn build` <br>
+got to `examples` and start index.html
 ## index.html
 ``` html
 <body>
@@ -8,7 +14,7 @@ a lightweight reactive frontend library
     <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
     <script src="../dist/bundle.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
-  </body>
+ </body>
 ```
 ## main.js
 ``` javascript
