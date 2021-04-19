@@ -1,4 +1,4 @@
-# replace.js
+# Replace.js
 
 ## a lightweight reactive frontend library
 
