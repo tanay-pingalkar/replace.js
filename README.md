@@ -11,7 +11,7 @@
   <h1 class="{{ var }}">{{ var }}</h1>
   <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
   <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@latest/dist/bundle.js"
+    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js"
     type="text/javascript"
   ></script>
   <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js" type="text/javascript"></script>
@@ -111,6 +111,8 @@ condition will also run.
 }
 }}
 ```
+
+complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-osk5n?file=/index.html)
 
 ## setting up on local machine
 
