@@ -8,3 +8,8 @@ export const functionRegex = (name: string): RegExp => {
     "g"
   );
 };
+
+export const replaceAllRegex: RegExp = new RegExp(
+  "(\\{\\{[\\s\\n]*?\\([\\w\\Ws]*?\\)=(>|&gt)[\\w\\Ws]*?\\}\\}|\\{\\{[\\s]*?[\\w\\Ws]*?[\\s]*?\\}\\})",
+  "g"
+);

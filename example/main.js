@@ -2,7 +2,7 @@ const user_name = new Str("user_name", "user_name");
 const profile_photo = new Str("profile_photo");
 const bool=new Bool("bool")
 const varia = new Str("var", "good");
-
+const str=new Str("str", "lol")
 
 async function main() {
   profile_photo.set("loading");
@@ -20,5 +20,5 @@ function swap(){
 
 function clicko() {
   varia.if("good", "bad");
-  varia.elif("bad", "good");
+  varia.elif("bad", 'good');
 }

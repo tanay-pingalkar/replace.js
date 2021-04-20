@@ -5,6 +5,9 @@ export class Str {
   name: string;
   content: string;
   constructor(name: string, content: string = "") {
+    if (typeof content != "string") {
+      throw new Error(`string is expected found ${typeof content}`);
+    }
     window.variables.push({
       name: name,
       content: content,
@@ -49,6 +52,9 @@ export class Str {
   }
 
   elif(state: string, callback: Function | string) {
+    if (typeof callback != "string" && typeof callback != "function") {
+      throw new Error(`string is expected found ${typeof callback}`);
+    }
     if (this.ifResult) {
       return false;
     }

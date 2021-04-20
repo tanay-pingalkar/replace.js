@@ -1,6 +1,6 @@
 import { functionRegex, keyWordRegex } from "./regex";
 
-export const replace = (name: string, content: any) => {
+export const replace = (name: string, content: any): void => {
   let html: string = window.initialHTML;
   window.variables.forEach((element, i) => {
     let newContent: string;
@@ -17,7 +17,7 @@ export const replace = (name: string, content: any) => {
         onlyfunc = onlyfunc.replace("&gt;", ">");
         let res: any;
         if (typeof newContent === "string") {
-          res = eval(`const func=${onlyfunc};func("${newContent}")`);
+          res = eval(`const func=${onlyfunc};func("${newContent}");`);
         } else {
           res = eval(`const func=${onlyfunc};func(${newContent})`);
         }
