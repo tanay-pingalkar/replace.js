@@ -9,18 +9,30 @@
     <title>Replace.js</title>
   </head>
   <body>
-    <img
-      src="
-      {{ 
-          (profile_photo)=>(profile_photo==='loading') ? './logo.svg' : profile_photo
-      }}"
+    <div>
+      <h1>random user example</h1>
+      <img
+      src="{{ (profile_photo)=>(profile_photo==='loading') ? './logo.svg' : profile_photo }}"
       alt="photo"
       height="100px"
       width="100px"
     />
+   
     <h1>{{ user_name }}</h1>
     <button onclick="main()">get random user</button>
-    <script src="../dist/bundle.js" type="text/javascript"></script>
+    </div>
+    <div>
+      <h1>good bad example</h1>
+      <h1 class="{{ var }}">{{ var }}</h1>
+      <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
+    </div>
+    <div>
+      <h1>boolean test</h1>
+      <h1>{{ (bool)=> (bool===true) ? 'lol' : 'ball' }}</h1>
+      <button onclick="swap()">{{ (bool)=> (bool===true) ? 'lol' : 'ball' }}</button>
+    </div>
+
+     <script src="../dist/bundle.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
   </body>
 </html>

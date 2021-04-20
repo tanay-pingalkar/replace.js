@@ -15,9 +15,7 @@
     "ts-loader": "^8.1.0",
     "typescript": "^4.2.4",
     "webpack": "^5.33.2",
-    "webpack-cli": "^4.6.0"
-  },
-  "dependencies": {
+    "webpack-cli": "^4.6.0",
     "-": "^0.0.1",
     "D": "^1.0.0",
     "babel-core": "^6.26.3",

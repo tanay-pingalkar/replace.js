@@ -1,3 +1,4 @@
+import { Bool } from "../datatypes/boolean";
 import { Str } from "../datatypes/string";
 
 declare global {
@@ -6,6 +7,7 @@ declare global {
     initialHTML: string;
     Str: typeof Str;
     replace: any;
+    Bool: typeof Bool;
   }
 }
 

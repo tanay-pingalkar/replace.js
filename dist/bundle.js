@@ -88,38 +88,92 @@ exports.Str = Str;
 
 /***/ }),
 /* 2 */
-/***/ ((__unused_webpack_module, exports) => {
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
 exports.replace = void 0;
+const regex_1 = __webpack_require__(4);
 const replace = (name, content) => {
     let html = window.initialHTML;
     window.variables.forEach((element, i) => {
-        if (element.name === name) {
-            html = html.replaceAll(`{{ ${name} }}`, content);
-            window.variables[i].content = content;
+        let newContent;
+        if (element.name === name)
+            newContent = content;
+        else
+            newContent = element.content;
+        html = html.replaceAll(regex_1.keyWordRegex(element.name), newContent);
+        window.variables[i].content = newContent;
+        const funcs = window.initialHTML.match(regex_1.functionRegex(element.name));
+        if (funcs != null) {
+            funcs.forEach((func) => {
+                let onlyfunc = func.slice(2, func.length - 2);
+                onlyfunc = onlyfunc.replace("&gt;", ">");
+                let res;
+                if (typeof newContent === "string") {
+                    res = eval(`const func=${onlyfunc};func("${newContent}")`);
+                }
+                else {
+                    res = eval(`const func=${onlyfunc};func(${newContent})`);
+                }
+                html = html.replaceAll(func, res);
+            });
         }
-        html = html.replaceAll(`{{ ${element.name} }}`, element.content);
-    });
-    const reg = new RegExp(`\\{\\{[\\s\\n]*?\\(${name}\\)=>[\\w\\W]*?\\s\\}\\}`, "g");
-    const funcs = window.initialHTML.match(reg);
-    console.log(funcs, reg);
-    if (funcs === null) {
-        document.body.innerHTML = html;
-        return content;
-    }
-    funcs.forEach((func) => {
-        let onlyfunc = func.slice(2, func.length - 2);
-        console.log(onlyfunc);
-        const res = eval(`const func=${onlyfunc};func("${content}")`);
-        console.log(window.initialHTML.replaceAll(func, res));
-        html = html.replaceAll(func, res);
     });
     document.body.innerHTML = html;
     return content;
 };
 exports.replace = replace;
+
+
+/***/ }),
+/* 3 */
+/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.Bool = void 0;
+const replace_1 = __webpack_require__(2);
+class Bool {
+    constructor(name, content = false) {
+        window.variables.push({
+            name: name,
+            content: content,
+        });
+        this.name = name;
+        this.content = content;
+        replace_1.replace(this.name, this.content);
+    }
+    set(content) {
+        this.content = content;
+        replace_1.replace(this.name, this.content);
+    }
+    swap() {
+        this.content = !this.content;
+        replace_1.replace(this.name, this.content);
+    }
+    get val() {
+        return this.content;
+    }
+}
+exports.Bool = Bool;
+
+
+/***/ }),
+/* 4 */
+/***/ ((__unused_webpack_module, exports) => {
+
+
+Object.defineProperty(exports, "__esModule", ({ value: true }));
+exports.functionRegex = exports.keyWordRegex = void 0;
+const keyWordRegex = (name) => {
+    return new RegExp(`\\{\\{[\\s]*?${name}[\\s]*?\\}\\}`, "g");
+};
+exports.keyWordRegex = keyWordRegex;
+const functionRegex = (name) => {
+    return new RegExp(`\\{\\{[\\s\\n]*?\\(${name}\\)=(>|&gt)[\\w\\W\s]*?\\}\\}`, "g");
+};
+exports.functionRegex = functionRegex;
 
 
 /***/ })
@@ -156,12 +210,14 @@ var __webpack_exports__ = {};
 var exports = __webpack_exports__;
 
 Object.defineProperty(exports, "__esModule", ({ value: true }));
+const boolean_1 = __webpack_require__(3);
 const string_1 = __webpack_require__(1);
 const replace_1 = __webpack_require__(2);
 window.initialHTML = document.body.innerHTML;
 window.variables = [];
 window.Str = string_1.Str;
 window.replace = replace_1.replace;
+window.Bool = boolean_1.Bool;
 
 })();
 

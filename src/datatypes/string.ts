@@ -1,7 +1,7 @@
-import { replace } from "../replace";
+import { replace } from "../utils/replace";
 
 export class Str {
-  ifResult: boolean;
+  private ifResult: boolean;
   name: string;
   content: string;
   constructor(name: string, content: string = "") {
