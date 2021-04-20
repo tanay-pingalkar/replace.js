@@ -10,14 +10,12 @@
 <body>
   <h1 class="{{ var }}">{{ var }}</h1>
   <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
-<<<<<<< HEAD
   <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@latest/dist/bundle.js"
+    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js"
     type="text/javascript"
   ></script>
-=======
   <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js" type="text/javascript"></script>
->>>>>>> 5719ad8b6d7d9177834803ff6c1dafdb097b152d
+
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
@@ -46,7 +44,7 @@ function clicko() {
 
 ## voila
 
-![video](https://github.com/tanay-pingalkar/replace.js/blob/example/37caf7c52c3ecce60d7fed25bc55a1f5f5d12852/Screencast%202021-04-19%2011%2033%2032.gif)
+![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-19%2011%2033%2032.gif)
 
 ## conditions
 
@@ -91,8 +89,8 @@ async function main() {
 main();
 ```
 
-and thats it
-![video](https://github.com/tanay-pingalkar/replace.js/blob/example/random.gif)
+- and thats it <br>
+![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/random.gif)
 
 as you see this is how conditions works in replace.js, whenever you will change value of `profile_photo` by `profile_photo.set()`, the following
 condition will also run.
@@ -113,6 +111,8 @@ condition will also run.
 }
 }}
 ```
+
+complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-osk5n?file=/index.html)
 
 ## setting up on local machine
 
