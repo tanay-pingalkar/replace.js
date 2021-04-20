@@ -89,7 +89,7 @@ async function main() {
 main();
 ```
 
-and thats it
+- and thats it <br>
 ![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/random.gif)
 
 as you see this is how conditions works in replace.js, whenever you will change value of `profile_photo` by `profile_photo.set()`, the following
