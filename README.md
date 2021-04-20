@@ -10,10 +10,14 @@
 <body>
   <h1 class="{{ var }}">{{ var }}</h1>
   <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
+<<<<<<< HEAD
   <script
     src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@latest/dist/bundle.js"
     type="text/javascript"
   ></script>
+=======
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js" type="text/javascript"></script>
+>>>>>>> 5719ad8b6d7d9177834803ff6c1dafdb097b152d
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
