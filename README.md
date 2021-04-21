@@ -120,20 +120,19 @@ currently this feature is not available on v0.0.1, but will be sooner available.
 Currently the loops are not well polished and may doest look clean. We will see array by making a todo list
 - html
 ``` html
-<h1>
-      <input onclick="add(event)"><button>add</button>
-      {{ 
-        (arr)=>{
-        let arre=[];
-        arr.forEach((ele,i)=>{
-          arre.push(`
-          <p>${ele}</p>
-          <button onclick="remove(${i})">remove</button>
-          `)
-        })
-        return arre.join("")
-        } 
-      }}
+<input onchange="add(event)">
+{{ 
+  (arr)=>{
+  let arre=[];
+  arr.forEach((ele,i)=>{
+    arre.push(`
+    <p>${ele}</p>
+    <button onclick="remove(${i})">remove</button>
+    `)
+  })
+  return arre.join("")
+  } 
+}}
 ```
 - js
 ``` javascript
