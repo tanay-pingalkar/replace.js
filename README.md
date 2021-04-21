@@ -123,11 +123,11 @@ got to `examples` and start index.html
 
 ## status
 currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you want to use very latest replace.js feature, you can clone the repo. Currently this is repo is under rapid developemet and you may see some drastic changes. Below are some features i will try to provide in v0.0.2.
-- [ ] array support
+- [x] array support
 - [x] error handler
-- [ ] loops 
 - [ ] object support
 - [ ] will have seperate docs
+- [ ] number support
 
 ## contribution
 this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
