@@ -129,10 +129,10 @@ currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you 
 - [ ] object support
 
 ## contribution
-this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following means
-- can report bugs or feature idea on github issue
-- can work on documents
-- can contribute to direct source code
+this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
+- report bugs or feature idea on github issue
+- work on documentation
+- contribute to direct source code
 
 ## philosophy
 
