@@ -127,6 +127,7 @@ currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you 
 - [x] error handler
 - [ ] loops 
 - [ ] object support
+- [ ] will have seperate docs
 
 ## contribution
 this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
