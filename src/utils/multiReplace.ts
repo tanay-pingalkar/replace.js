@@ -1,6 +1,11 @@
 import { multiReplace as type } from "../types/global";
 import { functionRegex, keyWordRegex } from "./regex";
 
+/*
+this is utility is same as replace function, source code is 
+also same but with some small changes, it can now replace mutiple 
+variables, functions an conditions
+*/
 export const multiReplace = (data: type): void => {
   let html: string = window.initialHTML;
   window.variables.forEach((element, i) => {

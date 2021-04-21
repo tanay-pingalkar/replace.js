@@ -1,3 +1,10 @@
+/*
+this is where all regular expressions are stored. 
+Please handle this regex carefully. a missing symbol 
+can cause a big errors. note "\\" is turned to "\"
+means "\s" will be "\\s"
+*/
+
 export const keyWordRegex = (name: string): RegExp => {
   return new RegExp(`\\{\\{[\\s]*?${name}[\\s]*?\\}\\}`, "g");
 };
