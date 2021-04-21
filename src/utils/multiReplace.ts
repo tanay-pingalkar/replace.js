@@ -1,11 +1,12 @@
+import { multiReplace as type } from "../types/global";
 import { functionRegex, keyWordRegex } from "./regex";
 
-export const replace = (name: string, content: any): void => {
+export const multiReplace = (data: type): void => {
   let html: string = window.initialHTML;
   window.variables.forEach((element, i) => {
     let newContent: string;
 
-    if (element.name === name) newContent = content;
+    if (data[element.name]) newContent = data[element.name];
     else newContent = element.content;
     html = html.replaceAll(keyWordRegex(element.name), newContent);
     window.variables[i].content = newContent;
@@ -14,7 +15,7 @@ export const replace = (name: string, content: any): void => {
     if (funcs != null) {
       funcs.forEach((func, i) => {
         let res: any;
-        if (element.name === name) {
+        if (data[element.name]) {
           console.log(funcs);
           let onlyfunc = func.slice(2, func.length - 2);
           onlyfunc = onlyfunc.replace("&gt;", ">");

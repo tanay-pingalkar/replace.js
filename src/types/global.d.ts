@@ -1,5 +1,6 @@
 import { Bool } from "../datatypes/boolean";
 import { Str } from "../datatypes/string";
+import { multiReplace } from "../utils/multiReplace";
 
 declare global {
   interface Window {
@@ -8,6 +9,7 @@ declare global {
     Str: typeof Str;
     replace: any;
     Bool: typeof Bool;
+    multiReplace: typeof multiReplace;
   }
 }
 
@@ -15,4 +17,8 @@ declare interface element {
   name: string;
   content: any;
   resolved: Array<string>;
+}
+
+declare interface multiReplace {
+  [keys: string]: string;
 }
