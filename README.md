@@ -121,7 +121,20 @@ run `yarn install` <br>
 then `yarn build` <br>
 got to `examples` and start index.html
 
+## status
+currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you want to use very latest replace.js feature, you can clone the repo. Currently this is repo is under rapid developemet and you may see some drastic changes. Below are some features i will try to provide in v0.0.2.
+- [ ] array support
+- [x] error handler
+- [ ] loops 
+- [ ] object support
+
+## contribution
+this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following means
+- can report bugs or feature idea on github issue
+- can work on documents
+- can contribute to direct source code
+
 ## philosophy
 
-the main goal i have to achieve making this library is to make it simple, lightweight and reactive. The name of the library tells the core of the library. It just
-replace `{{ variable_name }}` by your given content in document.body.innerHTML. Thats how it is reactive and you dont have getElementById every where.
+the main goal i have to achieve making this library is to make it simple, lightweight and reactive. The name of the library tells the core of the library. The dom 
+manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
