@@ -21,7 +21,6 @@ export const multiReplace = (data: type): void => {
       funcs.forEach((func, i) => {
         let res: any;
         if (data[element.name]) {
-          console.log(funcs);
           let onlyfunc = func.slice(2, func.length - 2);
           onlyfunc = onlyfunc.replace("&gt;", ">");
           if (typeof newContent === "string") {

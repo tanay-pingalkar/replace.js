@@ -17,6 +17,6 @@ export const functionRegex = (name: string): RegExp => {
 };
 
 export const replaceAllRegex: RegExp = new RegExp(
-  "(\\{\\{[\\s\\n]*?\\([\\w\\Ws]*?\\)=(>|&gt)[\\w\\Ws]*?\\}\\}|\\{\\{[\\s]*?[\\w\\Ws]*?[\\s]*?\\}\\})",
+  "(\\{\\{[\\s\\n]*?(\\([\\w\\Ws]*?\\)=(>|&gt)[\\w\\Ws]*?|\\[[\\w\\W]\\])\\}\\}|\\{\\{[\\s]*?[\\w\\Ws]*?[\\s]*?\\}\\})",
   "g"
 );

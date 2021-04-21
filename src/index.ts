@@ -1,3 +1,4 @@
+import { Arr } from "./datatypes/array";
 import { Bool } from "./datatypes/boolean";
 import { Str } from "./datatypes/string";
 import { init } from "./utils/init";
@@ -13,4 +14,5 @@ window.variables = [];
 window.Str = Str;
 window.replace = replace;
 window.Bool = Bool;
+window.Arr = Arr;
 window.multiReplace = multiReplace;

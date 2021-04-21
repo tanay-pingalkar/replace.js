@@ -12,14 +12,14 @@
     <div>
       <h1>random user example</h1>
       <img
-      src="{{ (profile_photo)=>(profile_photo==='loading')?'./logo.svg' : profile_photo }}"
-      alt="photo"
-      height="100px"
-      width="100px"
-    />
-   
-    <h1>{{ user_name }}</h1>
-    <button onclick="main()">get random user</button>
+        src="{{ (profile_photo)=>(profile_photo==='loading')?'./logo.svg' : profile_photo }}"
+        alt="photo"
+        height="100px"
+        width="100px"
+      />
+
+      <h1>{{ user_name }}</h1>
+      <button onclick="main()">get random user</button>
     </div>
     <div>
       <h1>good bad example</h1>
@@ -28,17 +28,29 @@
     </div>
     <div>
       <h1>boolean test</h1>
-      <button onclick="swap()">{{ (bool)=> 
-        (bool===true) ? 
-        '<h1>big button true</h1>' : 
-        '<h3>small button false</h3>' }}</button>
+      <button onclick="swap()">
+        {{ (bool)=> (bool===true) ? '<h1>big button true</h1>' : '<h3>small button false</h3>' }}
+      </button>
     </div>
 
     <div>
-        <h1>{{ str }}</h1>
+      <h1>array example with a todo list project</h1>
+      <input onchange="add(event)"><button>add</button>
+      {{ 
+        (arr)=>{
+        let arre=[];
+        arr.forEach((ele,i)=>{
+          arre.push(`
+          <p>${ele}</p>
+          <button onclick="remove(${i})">remove</button>
+          `)
+        })
+        return arre.join("")
+        } 
+      }}
     </div>
-
-     <script src="../dist/bundle.min.js" type="text/javascript"></script>
+    
+    <script src="../dist/bundle.min.js" type="text/javascript"></script>
     <script src="main.js" type="text/javascript"></script>
   </body>
 </html>

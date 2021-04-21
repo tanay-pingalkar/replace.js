@@ -23,8 +23,4 @@ export class Bool {
     this.content = !this.content;
     replace(this.name, this.content);
   }
-
-  get val(): boolean {
-    return this.content;
-  }
 }

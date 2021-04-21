@@ -2,7 +2,7 @@ const user_name = new Str("user_name", "user_name");
 const profile_photo = new Str("profile_photo");
 const bool = new Bool("bool");
 const varia = new Str("var", "good");
-const str = new Str("str", "lol");
+const arr=new Arr("arr");
 
 async function main() {
   profile_photo.set("loading");
@@ -10,6 +10,7 @@ async function main() {
   data = await data.json();
   // user_name.set(data.results[0].name.first);
   // profile_photo.set(data.results[0].picture.medium);
+  
   multiReplace({
     user_name: data.results[0].name.first,
     profile_photo: data.results[0].picture.medium,
@@ -24,4 +25,12 @@ function swap() {
 function clicko() {
   varia.if("good", "bad");
   varia.elif("bad", "good");
+}
+
+function add(e){
+  arr.push(e.target.value)
+}
+
+function remove(i){
+  arr.splice(i,1)
 }
