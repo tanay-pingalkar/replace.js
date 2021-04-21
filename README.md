@@ -2,8 +2,6 @@
 
 ## a lightweight reactive frontend library
 
-![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/example/logo.svg)
-
 ## index.html
 
 ```html
