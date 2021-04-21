@@ -12,14 +12,20 @@ export const replace = (name: string, content: any): void => {
 
     const funcs = window.initialHTML.match(functionRegex(element.name));
     if (funcs != null) {
-      funcs.forEach((func) => {
-        let onlyfunc = func.slice(2, func.length - 2);
-        onlyfunc = onlyfunc.replace("&gt;", ">");
+      funcs.forEach((func, i) => {
         let res: any;
-        if (typeof newContent === "string") {
-          res = eval(`const func=${onlyfunc};func("${newContent}");`);
+        if (element.name === name) {
+          console.log(funcs);
+          let onlyfunc = func.slice(2, func.length - 2);
+          onlyfunc = onlyfunc.replace("&gt;", ">");
+          if (typeof newContent === "string") {
+            res = eval(`const func=${onlyfunc};func("${newContent}");`);
+          } else {
+            res = eval(`const func=${onlyfunc};func(${newContent})`);
+          }
+          element.resolved[i] = res;
         } else {
-          res = eval(`const func=${onlyfunc};func(${newContent})`);
+          res = element.resolved[i];
         }
         html = html.replaceAll(func, res);
       });

@@ -11,6 +11,7 @@ export class Str {
     window.variables.push({
       name: name,
       content: content,
+      resolved: [],
     });
     this.name = name;
     this.content = content;

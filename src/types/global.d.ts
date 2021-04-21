@@ -14,4 +14,5 @@ declare global {
 declare interface element {
   name: string;
   content: any;
+  resolved: Array<string>;
 }

@@ -12,7 +12,7 @@
     <div>
       <h1>random user example</h1>
       <img
-      src="{{ (profile_photo)=>(profile_photo==='loading') ? './logo.svg' : profile_photo }}"
+      src="{{ (profile_photo)=>(profile_photo==='loading')?'./logo.svg' : profile_photo }}"
       alt="photo"
       height="100px"
       width="100px"
@@ -28,7 +28,10 @@
     </div>
     <div>
       <h1>boolean test</h1>
-      <button onclick="swap()">{{ (bool)=> (bool===true) ? '<h1>big button true</h1>' : '<h3>small button false</h3>' }}</button>
+      <button onclick="swap()">{{ (bool)=> 
+        (bool===true) ? 
+        '<h1>big button true</h1>' : 
+        '<h3>small button false</h3>' }}</button>
     </div>
 
     <div>
