@@ -114,6 +114,51 @@ condition will also run.
 
 complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-osk5n?file=/index.html)
 
+
+## array and loops
+currently this feature is not available on v0.0.1, but will be sooner available. To use this is feature you will need to clone this repo.
+Currently the loops are not well polished and may doest look clean. We will see array by making a todo list
+- html
+``` html
+<h1>
+      <input onclick="add(event)"><button>add</button>
+      {{ 
+        (arr)=>{
+        let arre=[];
+        arr.forEach((ele,i)=>{
+          arre.push(`
+          <p>${ele}</p>
+          <button onclick="remove(${i})">remove</button>
+          `)
+        })
+        return arre.join("")
+        } 
+      }}
+```
+- js
+``` javascript
+const arr=new Arr("arr");
+
+function add(e){
+  arr.push(e.target.value)
+}
+
+function remove(i){
+  arr.splice(i,1)
+}
+```
+And here you go....
+Dont worry I will work on loops.
+As you can see , to render array, you can so this
+``` html
+<h1>{{ arr }<h1>
+<h1>{{ (arr)=>arr[0] }<h1>
+```
+```javascript
+const arr=new Arr("arr")
+arr.push("this is array")
+```
+
 ## setting up on local machine
 
 fork the repo and clone it <br>
