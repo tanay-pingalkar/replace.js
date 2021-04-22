@@ -15,7 +15,7 @@ as you can see that it an arrrow function. The argument we passed in is the vari
 
 ## loop
 - html
-```
+``` html
 <input onchange="addTodo(event)">
 {{ 
   (arr)=>{
@@ -30,7 +30,7 @@ as you can see that it an arrrow function. The argument we passed in is the vari
 }}
 ```
 - javascript
-```
+``` javascript
 function addTodo(e){
   arr.push(e.target.value)
 }
