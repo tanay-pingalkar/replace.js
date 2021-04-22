@@ -4,6 +4,11 @@ const bool = new Bool("bool");
 const varia = new Str("var", "good");
 const arr=new Arr("arr");
 const counter=new  Num("counter",0);
+const pp=new Str("pp","kfjerjj");
+
+function lolol(){
+  pp.set("lol")
+}
 
 async function main() {
   profile_photo.set("loading");
