@@ -168,7 +168,6 @@ currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you 
 - [x] array support
 - [x] error handler
 - [ ] object support
-- [ ] better loops
 - [x] will have seperate docs
 - [x] number support
 
