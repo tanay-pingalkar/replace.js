@@ -111,7 +111,7 @@ condition will also run.
 ```
 
 complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-osk5n?file=/index.html)
-
+THe complete docs are available in [this folder](https://github.com/tanay-pingalkar/replace.js/tree/main/docs)
 
 ## array and loops
 currently this feature is not available on v0.0.1, but will be sooner available. To use this is feature you will need to clone this repo.
@@ -168,8 +168,9 @@ currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you 
 - [x] array support
 - [x] error handler
 - [ ] object support
-- [ ] will have seperate docs
-- [ ] number support
+- [ ] better loops
+- [x] will have seperate docs
+- [x] number support
 
 ## contribution
 this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
