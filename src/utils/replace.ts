@@ -1,4 +1,4 @@
-import { functionRegex, keyWordRegex } from "./regex";
+import { arrayRegex, functionRegex, keyWordRegex } from "./regex";
 
 /*
 the main utility of replace.js, this replaces {{ name }} to the given 
@@ -12,9 +12,12 @@ export const replace = (name: string, content: any): void => {
     let newContent: string;
     if (element.name === name) newContent = content;
     else newContent = element.content;
+
+    //keyword resolver
     html = html.replaceAll(keyWordRegex(element.name), newContent);
     window.variables[i].content = newContent;
 
+    // function resolver
     const funcs = window.initialHTML.match(functionRegex(element.name));
     if (funcs != null) {
       funcs.forEach((func, i) => {
@@ -29,6 +32,20 @@ export const replace = (name: string, content: any): void => {
           res = element.resolved[i];
         }
         html = html.replaceAll(func, res);
+      });
+    }
+
+    // array resolver
+    const matched_arr = window.initialHTML.match(arrayRegex(element.name));
+    if (matched_arr != null) {
+      matched_arr.forEach((one) => {
+        const onlyArr = one.slice(2, one.length - 2);
+        let res = eval(`const func=(arr)=>${onlyArr};func(content)`);
+        if (!res) {
+          console.warn(`${onlyArr} is ${res}`);
+          res = " ";
+        }
+        html = html.replaceAll(one, res);
       });
     }
   });

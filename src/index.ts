@@ -1,5 +1,6 @@
 import { Arr } from "./datatypes/array";
 import { Bool } from "./datatypes/boolean";
+import { Num } from "./datatypes/number";
 import { Str } from "./datatypes/string";
 import { init } from "./utils/init";
 import { multiReplace } from "./utils/multiReplace";
@@ -16,3 +17,4 @@ window.replace = replace;
 window.Bool = Bool;
 window.Arr = Arr;
 window.multiReplace = multiReplace;
+window.Num = Num;

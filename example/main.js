@@ -1,8 +1,9 @@
 const user_name = new Str("user_name", "user_name");
-const profile_photo = new Str("profile_photo");
+const profile_photo  = new Str("profile_photo");
 const bool = new Bool("bool");
 const varia = new Str("var", "good");
 const arr=new Arr("arr");
+const counter=new  Num("counter",0);
 
 async function main() {
   profile_photo.set("loading");
@@ -27,10 +28,17 @@ function clicko() {
   varia.elif("bad", "good");
 }
 
-function add(e){
+function addTodo(e){
   arr.push(e.target.value)
 }
 
 function remove(i){
   arr.splice(i,1)
+}
+
+function add(){
+  counter.incre();
+}
+function sub(){
+  counter.decre();
 }

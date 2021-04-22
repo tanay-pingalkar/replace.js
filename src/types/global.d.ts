@@ -1,5 +1,6 @@
 import { Arr } from "../datatypes/array";
 import { Bool } from "../datatypes/boolean";
+import { Num } from "../datatypes/number";
 import { Str } from "../datatypes/string";
 import { multiReplace } from "../utils/multiReplace";
 
@@ -12,6 +13,7 @@ declare global {
     Bool: typeof Bool;
     multiReplace: typeof multiReplace;
     Arr: typeof Arr;
+    Num: typeof Num;
   }
 }
 

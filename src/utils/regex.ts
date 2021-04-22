@@ -16,7 +16,13 @@ export const functionRegex = (name: string): RegExp => {
   );
 };
 
+export const arrayRegex = (name: string): RegExp => {
+  return new RegExp(
+    `\\{\\{[\\s\\n]*?\\${name}(\\[\\d\\]).*[\\s\\n]*?\\}\\}`,
+    "g"
+  );
+};
 export const replaceAllRegex: RegExp = new RegExp(
-  "(\\{\\{[\\s\\n]*?(\\([\\w\\Ws]*?\\)=(>|&gt)[\\w\\Ws]*?|\\[[\\w\\W]\\])\\}\\}|\\{\\{[\\s]*?[\\w\\Ws]*?[\\s]*?\\}\\})",
+  "(\\{\\{[\\s\\n]*?\\([\\w\\Ws]*?\\)=(>|&gt)[\\w\\Ws]*?}\\}|\\{\\{[\\s]*?[\\w\\Ws]*?[\\s]*?\\}\\}|\\{\\{[\\s\\n]*?[\\w\\W]*?\\(\\[\\d\\]\\).*[\\s\\n]*?\\}\\})",
   "g"
 );
