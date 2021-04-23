@@ -2,6 +2,8 @@
 
 ## a lightweight reactive frontend library
 
+![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/example/logo.png)
+
 ## index.html
 
 ```html
@@ -110,8 +112,6 @@ condition will also run.
 }}
 ```
 
-![gif](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-22%2017%2011%2023.gif)
-
 complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-osk5n?file=/index.html)
 THe complete docs are available in [this folder](https://github.com/tanay-pingalkar/replace.js/tree/main/docs)
 
@@ -147,6 +147,7 @@ function remove(i){
 }
 ```
 And here you go....
+![gif](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-22%2017%2011%2023.gif)
 Dont worry I will work on loops.
 As you can see , to render array, you can so this
 ``` html
