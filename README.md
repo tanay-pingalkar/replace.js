@@ -170,7 +170,6 @@ got to `examples` and start index.html
 currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you want to use very latest replace.js feature, you can clone the repo. Currently this is repo is under rapid developemet and you may see some drastic changes. Below are some features i will try to provide in v0.0.2.
 - [x] array support
 - [x] error handler
-- [ ] object support
 - [x] will have seperate docs
 - [x] number support
 
