@@ -14,7 +14,7 @@
     src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js"
     type="text/javascript"
   ></script>
-  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
 
   <script src="main.js" type="text/javascript"></script>
 </body>
@@ -65,10 +65,7 @@ let see one more example, lets make a random user generator
   />
   <h1>{{ user_name }}</h1>
   <button onclick="main()">get random user</button>
-  <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@latest/dist/bundle.js"
-    type="text/javascript"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
@@ -116,7 +113,6 @@ complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-os
 THe complete docs are available in [this folder](https://github.com/tanay-pingalkar/replace.js/tree/main/docs)
 
 ## array and loops
-currently this feature is not available on v0.0.1, but will be sooner available. To use this is feature you will need to clone this repo.
 Currently the loops are not well polished and may doest look clean. We will see array by making a todo list
 - html
 ``` html
@@ -133,6 +129,8 @@ Currently the loops are not well polished and may doest look clean. We will see 
   return arre.join("")
   } 
 }}
+<script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script>
 ```
 - js
 ``` javascript
@@ -167,7 +165,7 @@ then `yarn build` <br>
 got to `examples` and start index.html
 
 ## status
-currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you want to use very latest replace.js feature, you can clone the repo. Currently this is repo is under rapid developemet and you may see some drastic changes. Below are some features i will try to provide in v0.0.2.
+v0.0.2 features
 - [x] array support
 - [x] error handler
 - [x] will have seperate docs
