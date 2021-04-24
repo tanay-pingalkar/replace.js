@@ -8,12 +8,16 @@
     "dev": "webpack --watch",
     "format": "npx prettier --write . && npx prettier --check .",
     "test": "npx jest",
-    "test:pro": "npx jest --watch --coverage"
+    "test:pro": "npx jest --watch --coverage",
+    "serve": "npx live-server --open=/example/index.html --watch=./",
+    "serve:coverage": "npx live-server --open=/coverage/lcov-report/index.html --watch=./",
+    "preinstall": "npm i -g live-server"
   },
   "devDependencies": {
     "@tanay-pingalkar/runner": "^1.5.0",
     "@types/jest": "^26.0.22",
     "jest": "^26.6.3",
+    "live-serve": "^0.0.0",
     "prettier": "^2.2.1",
     "source-map-loader": "^2.0.1",
     "ts-jest": "^26.5.5",

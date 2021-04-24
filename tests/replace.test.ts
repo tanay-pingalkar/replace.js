@@ -14,7 +14,7 @@ window.variables.push({
   resolved: ["bye"],
 });
 
-describe("testing replace function which is the heart of replace.js", () => {
+describe("gonna check if replace(heart of replace.js) works fine", () => {
   it("should replace var to lol", () => {
     replace("var", "lol");
     expect(document.body.innerHTML).toBe("<h1>lol</h1><h1>bye</h1>");

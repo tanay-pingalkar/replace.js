@@ -1,4 +1,4 @@
-import { multiReplace as type } from "../types/global";
+import { multiReplace as multireplaceType } from "../types/global";
 import { arrayRegex, functionRegex, keyWordRegex } from "./regex";
 
 /*
@@ -6,10 +6,10 @@ this is utility is same as replace function, source code is
 also same but with some small changes, it can now replace mutiple 
 variables, functions an conditions
 */
-export const multiReplace = (data: type): void => {
+export const multiReplace = (data: multireplaceType): void => {
   let html: string = window.initialHTML;
   window.variables.forEach((element, i) => {
-    let newContent: string;
+    let newContent: any;
     if (data[element.name]) newContent = data[element.name];
     else newContent = element.content;
 
@@ -40,7 +40,7 @@ export const multiReplace = (data: type): void => {
     if (matched_arr != null) {
       matched_arr.forEach((one) => {
         const onlyArr = one.slice(2, one.length - 2);
-        let res = eval(`const func=(arr)=>${onlyArr};func(content)`);
+        let res = eval(`const func=(arr)=>${onlyArr};func(newContent)`);
         if (!res) {
           console.warn(`${onlyArr} is ${res}`);
           res = " ";

@@ -23,6 +23,6 @@ declare interface element {
   resolved: Array<string>;
 }
 
-declare interface multiReplace {
-  [keys: string]: string;
+declare interface multiReplace< {
+  [keys: string]: string | boolean | Array<any> | number;
 }
