@@ -144,9 +144,9 @@ function remove(i){
   arr.splice(i,1)
 }
 ```
-And here you go....
+And here you go.... <br>
 ![gif](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-22%2017%2011%2023.gif)
-Dont worry I will work on loops.
+<br>Dont worry I will work on loops.
 As you can see , to render array, you can so this
 ``` html
 <h1>{{ arr }<h1>
@@ -165,11 +165,11 @@ then `yarn build` <br>
 got to `examples` and start index.html
 
 ## status
-v0.0.2 features
-- [x] array support
-- [x] error handler
-- [x] will have seperate docs
-- [x] number support
+v0.0.3 upcoming features
+- [ ] tested in jest
+- [ ] object support
+- [ ] es6 transformation (currently  esnext)
+It will have a webpacked version,scopes and component based system soon. 
 
 ## contribution
 this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
@@ -178,6 +178,7 @@ this repo is open source and will live open source, contributers are highly welc
 - contribute to direct source code
 
 ## philosophy
+The main goal I have to acheive making this is to provide you reactive variables straight into html. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
 
-the main goal i have to achieve making this library is to make it simple, lightweight and reactive. The name of the library tells the core of the library. The dom 
-manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
+## Why?
+The most important question is why you should have a look at this library, if you have great libraries like react,vue and svelte. And the answer is react/vue/svelte/angular have a big learning curve, everyone have a different(sometimes sour) taste. React havethis weird jsx. Vue and svelte have their own extentions like `.vue`/`.svelte`. I made this because i sometimes feel that i am not coding in javascript, and we stuck at its limitations. Actually I am highly inspired by vue and svelte. And i am actually a react man. But lets give it a chance.
