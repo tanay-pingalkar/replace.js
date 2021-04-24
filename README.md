@@ -14,7 +14,7 @@
     src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js"
     type="text/javascript"
   ></script>
-  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.1/dist/bundle.min.js" type="text/javascript"></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
 
   <script src="main.js" type="text/javascript"></script>
 </body>
@@ -65,10 +65,7 @@ let see one more example, lets make a random user generator
   />
   <h1>{{ user_name }}</h1>
   <button onclick="main()">get random user</button>
-  <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@latest/dist/bundle.js"
-    type="text/javascript"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
@@ -116,7 +113,6 @@ complete project on [codesandbox.io](https://codesandbox.io/s/currying-flower-os
 THe complete docs are available in [this folder](https://github.com/tanay-pingalkar/replace.js/tree/main/docs)
 
 ## array and loops
-currently this feature is not available on v0.0.1, but will be sooner available. To use this is feature you will need to clone this repo.
 Currently the loops are not well polished and may doest look clean. We will see array by making a todo list
 - html
 ``` html
@@ -133,6 +129,8 @@ Currently the loops are not well polished and may doest look clean. We will see 
   return arre.join("")
   } 
 }}
+<script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js" type="text/javascript"></script>
+<script src="main.js" type="text/javascript"></script>
 ```
 - js
 ``` javascript
@@ -146,9 +144,9 @@ function remove(i){
   arr.splice(i,1)
 }
 ```
-And here you go....
+And here you go.... <br>
 ![gif](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-22%2017%2011%2023.gif)
-Dont worry I will work on loops.
+<br>Dont worry I will work on loops.
 As you can see , to render array, you can so this
 ``` html
 <h1>{{ arr }<h1>
@@ -167,12 +165,11 @@ then `yarn build` <br>
 got to `examples` and start index.html
 
 ## status
-currenly v0.0.1 is available and v0.0.2 will be sooner available on cdn. If you want to use very latest replace.js feature, you can clone the repo. Currently this is repo is under rapid developemet and you may see some drastic changes. Below are some features i will try to provide in v0.0.2.
-- [x] array support
-- [x] error handler
+v0.0.3 upcoming features
+- [ ] tested in jest
 - [ ] object support
-- [x] will have seperate docs
-- [x] number support
+- [ ] es6 transformation (currently  esnext)
+It will have a webpacked version,scopes and component based system soon. 
 
 ## contribution
 this repo is open source and will live open source, contributers are highly welcome. You can contribute to this library by following ways
@@ -181,6 +178,5 @@ this repo is open source and will live open source, contributers are highly welc
 - contribute to direct source code
 
 ## philosophy
+The main goal I have to acheive making this is to provide you reactive variables straight into html. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
 
-the main goal i have to achieve making this library is to make it simple, lightweight and reactive. The name of the library tells the core of the library. The dom 
-manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
