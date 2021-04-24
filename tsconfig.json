@@ -3,8 +3,9 @@
     "outDir": "./dist/",
     "noImplicitAny": true,
     "module": "commonjs",
-    "target": "esnext",
-    "sourceMap": true
+    "target": "es6",
+    "sourceMap": true,
+    "esModuleInterop": true
   },
   "included": ["./src"]
 }

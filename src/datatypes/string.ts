@@ -76,7 +76,4 @@ export class Str {
   replace(keyword: string, content: string) {
     this.set(this.content.replace(keyword, content));
   }
-  replaceAll(keyword: string, content: string) {
-    this.set(this.content.replaceAll(keyword, content));
-  }
 }

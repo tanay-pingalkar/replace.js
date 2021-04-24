@@ -14,7 +14,7 @@ export const replace = (name: string, content: any): void => {
     else newContent = element.content;
 
     //keyword resolver
-    html = html.replaceAll(keyWordRegex(element.name), newContent);
+    html = html.replace(keyWordRegex(element.name), newContent);
     window.variables[i].content = newContent;
 
     // function resolver
@@ -25,13 +25,13 @@ export const replace = (name: string, content: any): void => {
         if (element.name === name) {
           let onlyfunc = func.slice(2, func.length - 2);
           // actually there is a problem in html, in html, sometimes ">" is written as "&gt;"
-          onlyfunc = onlyfunc.replaceAll("&gt;", ">");
+          onlyfunc = onlyfunc.replace(/&gt;/g, ">");
           res = eval(`const func=${onlyfunc};func(newContent);`);
           element.resolved[i] = res;
         } else {
           res = element.resolved[i];
         }
-        html = html.replaceAll(func, res);
+        html = html.replace(func, res);
       });
     }
 
@@ -45,7 +45,7 @@ export const replace = (name: string, content: any): void => {
           console.warn(`${onlyArr} is ${res}`);
           res = " ";
         }
-        html = html.replaceAll(one, res);
+        html = html.replace(one, res);
       });
     }
   });
