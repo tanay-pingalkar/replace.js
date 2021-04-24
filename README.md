@@ -178,5 +178,5 @@ this repo is open source and will live open source, contributers are highly welc
 - contribute to direct source code
 
 ## philosophy
-The main goal I have to acheive making this is to provide you reactive variables straight into html. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
+The main goal I have to acheive making this is to provide you reactive variables straight into html.It is inspired from vue and svelte. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
 
