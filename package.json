@@ -9,8 +9,8 @@
     "format": "npx prettier --write . && npx prettier --check .",
     "test": "npx jest",
     "test:pro": "npx jest --watch --coverage",
-    "serve": "npx live-server --open=/example/index.html --watch=./",
-    "serve:coverage": "npx live-server --open=/coverage/lcov-report/index.html --watch=./",
+    "serve": "npx live-server --open=/example/index.html ",
+    "serve:coverage": "npx live-server --open=/coverage/lcov-report/index.html ",
     "preinstall": "npm i -g live-server"
   },
   "devDependencies": {

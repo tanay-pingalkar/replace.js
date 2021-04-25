@@ -16,9 +16,9 @@ export const functionRegex = (name: string): RegExp => {
   );
 };
 
-export const arrayRegex = (name: string): RegExp => {
+export const arrAndObjRegex = (name: string): RegExp => {
   return new RegExp(
-    `\\{\\{[\\s\\n]*?\\${name}(\\[\\d\\]).*[\\s\\n]*?\\}\\}`,
+    `\\{\\{[\\s\\n]*?\\${name}((\\[\\d\\]).*|\\.([\\.]?[\\w\\W]).*)[\\s\\n]*?\\}\\}`,
     "g"
   );
 };

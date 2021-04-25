@@ -1,4 +1,4 @@
-import { arrayRegex, functionRegex, keyWordRegex } from "./regex";
+import { arrAndObjRegex, functionRegex, keyWordRegex } from "./regex";
 
 /*
 the main utility of replace.js, this replaces {{ name }} to the given 
@@ -36,11 +36,13 @@ export const replace = (name: string, content: any): void => {
     }
 
     // array resolver
-    const matched_arr = window.initialHTML.match(arrayRegex(element.name));
+    const matched_arr = window.initialHTML.match(arrAndObjRegex(element.name));
     if (matched_arr != null) {
       matched_arr.forEach((one) => {
         const onlyArr = one.slice(2, one.length - 2);
-        let res = eval(`const func=(arr)=>${onlyArr};func(content)`);
+        let res = eval(
+          `const func=(this_is_reserved_keyword)=>{let ${element.name}=this_is_reserved_keyword;return ${onlyArr}};func(newContent)`
+        );
         if (!res) {
           console.warn(`${onlyArr} is ${res}`);
           res = " ";

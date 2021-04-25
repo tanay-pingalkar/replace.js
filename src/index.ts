@@ -5,6 +5,7 @@ import { Str } from "./datatypes/string";
 import { init } from "./utils/init";
 import { multiReplace } from "./utils/multiReplace";
 import { replace } from "./utils/replace";
+import { Obj } from "./datatypes/object";
 
 /*
 all function that are meant to be available globally and to the user
@@ -18,3 +19,4 @@ window.Bool = Bool;
 window.Arr = Arr;
 window.multiReplace = multiReplace;
 window.Num = Num;
+window.Obj = Obj;

@@ -3,7 +3,7 @@ import { replace } from "../utils/replace";
 export class Arr {
   name: string;
   content: Array<any>;
-  constructor(name: string, content: Array<any> = []) {
+  constructor(name: string, content: Array<any>) {
     if (typeof content != "object") {
       throw new Error(`array is expected found ${typeof content}`);
     }

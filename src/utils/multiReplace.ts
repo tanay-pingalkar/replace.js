@@ -1,9 +1,9 @@
 import { multiReplace as multireplaceType } from "../types/global";
-import { arrayRegex, functionRegex, keyWordRegex } from "./regex";
+import { arrAndObjRegex, functionRegex, keyWordRegex } from "./regex";
 
 /*
-this is utility is same as replace function, source code is 
-also same but with some small changes, it can now replace mutiple 
+this is utility is same as replace function, source code is
+also same but with some small changes, it can now replace mutiple
 variables, functions an conditions
 */
 export const multiReplace = (data: multireplaceType): void => {
@@ -35,12 +35,14 @@ export const multiReplace = (data: multireplaceType): void => {
       });
     }
 
-    // array resolver
-    const matched_arr = window.initialHTML.match(arrayRegex(element.name));
+    // array and object resolver
+    const matched_arr = window.initialHTML.match(arrAndObjRegex(element.name));
     if (matched_arr != null) {
       matched_arr.forEach((one) => {
         const onlyArr = one.slice(2, one.length - 2);
-        let res = eval(`const func=(arr)=>${onlyArr};func(newContent)`);
+        let res = eval(
+          `const func=(this_is_reserved_keyword)=>{let ${element.name}=this_is_reserved_keyword;return ${onlyArr}};func(newContent)`
+        );
         if (!res) {
           console.warn(`${onlyArr} is ${res}`);
           res = " ";
@@ -49,5 +51,6 @@ export const multiReplace = (data: multireplaceType): void => {
       });
     }
   });
+
   document.body.innerHTML = html;
 };

@@ -2,14 +2,14 @@ const user_name = new Str("user_name", "user_name");
 const profile_photo  = new Str("profile_photo");
 const bool = new Bool("bool");
 const varia = new Str("var", "good");
-const arr=new Arr("arr");
+const arr=new Arr("arr",[]);
 const counter=new  Num("counter",0);
 const pp=new Str("pp","kfjerjj");
-
-function lolol(){
-  pp.set("lol")
-}
-
+const lol=new Arr("lol",[1])
+const obj=new Obj("obj",{
+  title:"this is title",
+  description:"this is description"
+}) 
 async function main() {
   profile_photo.set("loading");
   let data = await fetch("https://randomuser.me/api/?results=1");

@@ -1,6 +1,7 @@
 import { Arr } from "../datatypes/array";
 import { Bool } from "../datatypes/boolean";
 import { Num } from "../datatypes/number";
+import { Obj } from "../datatypes/object";
 import { Str } from "../datatypes/string";
 import { multiReplace } from "../utils/multiReplace";
 
@@ -14,6 +15,7 @@ declare global {
     multiReplace: typeof multiReplace;
     Arr: typeof Arr;
     Num: typeof Num;
+    Obj: typeof Obj;
   }
 }
 
@@ -23,6 +25,6 @@ declare interface element {
   resolved: Array<string>;
 }
 
-declare interface multiReplace< {
+declare interface multiReplace {
   [keys: string]: string | boolean | Array<any> | number;
 }
