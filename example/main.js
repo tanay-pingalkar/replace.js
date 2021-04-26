@@ -1,26 +1,14 @@
+// good bad exmaple
+const varia = new Str("var", "good");
+function clicko() {
+  varia.if("good", "bad");
+  varia.elif("bad", "good");
+}
 
-const template=new Template("temp",`
-<h1>object example</h1>
-<h2>{{ obj.title }}</h2>
-<h3>{{ obj.description }}</h3>
-`,
-);
 
-
+// random user example
 const user_name = new Str("user_name", "user_name");
 const profile_photo  = new Str("profile_photo");
-const bool = new Bool("bool");
-const varia = new Str("var", "good");
-const arr=new Arr("arr",[]);
-const counter=new  Num("counter",0);
-const pp=new Str("pp","kfjerjj");
-const lol=new Arr("lol",[1])
-const obj=new Obj("obj",{
-  title:"this is title",
-  description:"this is description"
-});
-
-
 async function main() {
   profile_photo.set("loading");
   let data = await fetch("https://randomuser.me/api/?results=1");
@@ -35,15 +23,8 @@ async function main() {
 }
 main();
 
-function swap() {
-  bool.swap();
-}
-
-function clicko() {
-  varia.if("good", "bad");
-  varia.elif("bad", "good");
-}
-
+// todo list example
+const arr=new Arr("arr",[]);
 function addTodo(e){
   arr.push(e.target.value)
 }
@@ -52,9 +33,48 @@ function remove(i){
   arr.splice(i,1)
 }
 
+
+// number example
+const counter=new  Num("counter",0);
 function add(){
   counter.incre();
 }
 function sub(){
   counter.decre();
 }
+
+
+// boolean exmaple
+const bool = new Bool("bool");
+function swap() {
+  bool.swap();
+}
+
+// object example
+const template=new Template("temp",`
+<h1>object example</h1>
+<h2>{{ obj.title }}</h2>
+<h3>{{ obj.description }}</h3>
+`,
+);
+const obj=new Obj("obj",{
+  title:"this is title",
+  description:"this is description"
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
