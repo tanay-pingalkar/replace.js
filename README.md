@@ -53,15 +53,15 @@ let see one more example, lets make a random user generator
 
 ```html
 <body>
-  <img
-    src="
-      {{ 
-          (profile_photo)=>(profile_photo==='loading') ? './logo.svg' : profile_photo
-      }}"
-    alt="photo"
-    height="100px"
-    width="100px"
-  />
+  {{ 
+     (profile_photo)=>
+        (profile_photo==='loading')?
+        '<h1>loading</h1>' : 
+        `<img src="${profile_photo}" 
+        alt="photo"
+        height="100px" 
+        width="100px"/>` 
+   }}
   <h1>{{ user_name }}</h1>
   <button onclick="main()">get random user</button>
   <script
@@ -95,12 +95,10 @@ as you see this is how conditions works in replace.js, whenever you will change 
 condition will also run.
 
 ```javascript
-{
-  {
+{{
     (profile_photo) =>
       profile_photo === "loading" ? "./logo.svg" : profile_photo;
-  }
-}
+}}
 ```
 
 ```javscript
@@ -122,10 +120,14 @@ Currently the loops are not well polished and may doest look clean. We will see 
 
 ```html
 <input onchange="add(event)" />
-{{ (arr)=>{ let arre=[]; arr.forEach((ele,i)=>{ arre.push(`
-<p>${ele}</p>
-<button onclick="remove(${i})">remove</button>
-`) }) return arre.join("") } }}
+{{ 
+  (arr)=>{ 
+    let arre=[]; 
+    arr.forEach((ele,i)=>{ 
+      arre.push(`<p>${ele}</p><button onclick="remove(${i})">remove</button>`) 
+    }) 
+    return arre.join("") 
+} }}
 <script
   src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js"
   type="text/javascript"
@@ -150,23 +152,17 @@ function remove(i) {
 And here you go.... <br>
 ![gif](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-22%2017%2011%2023.gif)
 <br>Dont worry I will work on loops.
-As you can see , to render array, you can so this
 
-```html
-<h1>
-  {{ arr }
-  <h1>
-    <h1>
-      {{ (arr)=>arr[0] }
-      <h1></h1>
-    </h1>
-  </h1>
-</h1>
+## object
+``` html
+<h1>{{ heading.h1 }}<h1>
+<h2>{{ heading.h2 }}</h2>
 ```
-
-```javascript
-const arr = new Arr("arr");
-arr.push("this is array");
+``` javascript
+const heading=new Obj("heading",{
+  h1:"this is h1 heading",
+  h2:"this is h2 heading"
+});
 ```
 
 ## setting up on local machine
@@ -174,17 +170,17 @@ arr.push("this is array");
 fork the repo and clone it <br>
 run `yarn install` <br>
 then `yarn build` <br>
-run `yarn serve`to serve the example
-run `yarn test` or `yarn test:pro` for testing
+run `yarn serve`to serve the example <br>
+run `yarn test` or `yarn test:pro` for testing <br>
 run `yarn serve:coverage` to serve coverage of testing
 
 ## status
 
 v0.0.3 upcoming features
 
-- [ ] tested in jest
-- [ ] object support
-- [ ] es6 transformation (currently esnext)
+- [x] tested in jest
+- [x] object support
+- [x] es6 transformation (currently esnext)
       It will have a webpacked version,scopes and component based system soon.
 
 ## contribution
