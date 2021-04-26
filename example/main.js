@@ -4,7 +4,9 @@ const template=new Template("temp",`
 <h2>{{ obj.title }}</h2>
 <h3>{{ obj.description }}</h3>
 `,
-)
+);
+
+
 const user_name = new Str("user_name", "user_name");
 const profile_photo  = new Str("profile_photo");
 const bool = new Bool("bool");
