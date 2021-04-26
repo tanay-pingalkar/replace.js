@@ -42,6 +42,7 @@ function clicko() {
 
 ![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-19%2011%2033%2032.gif)
 
+
 ## conditions
 
 let see one more example, lets make a random user generator
