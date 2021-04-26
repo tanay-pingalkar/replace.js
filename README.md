@@ -11,10 +11,7 @@
   <h1 class="{{ var }}">{{ var }}</h1>
   <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
 
-  <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js"
-    type="text/javascript"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.3/dist/bundle.min.js"></script>
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
@@ -41,7 +38,7 @@ function clicko() {
 }
 ```
 
-## voila
+## and here we go
 
 ![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-19%2011%2033%2032.gif)
 
@@ -65,8 +62,7 @@ let see one more example, lets make a random user generator
   <h1>{{ user_name }}</h1>
   <button onclick="main()">get random user</button>
   <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js"
-    type="text/javascript"
+    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.3/dist/bundle.min.js"
   ></script>
   <script src="main.js" type="text/javascript"></script>
 </body>
