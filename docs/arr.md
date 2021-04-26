@@ -1,7 +1,7 @@
 # `class Arr`
 
 ```javascript
-const arr=new Arr("array_name");
+
 
 // set
 arr.set([1,2,3]);
@@ -20,12 +20,15 @@ arr.splice(2,0);
 
 //index
 arr.index(1) // returns 0;
-
-//edit
-arr.edit(index, new-content);
+// or
+arr.index(1,"new value");
 
 // content
 arr.content
 
+```
 
+## display
+```html
+<p>{{ arr[0] }}</p>
 ```
