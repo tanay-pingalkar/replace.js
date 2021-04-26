@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="./logo.png"  sizes="128x128" type="image/png"/> -->
+    <title>Replace.js</title>
+  </head>
+  <body>
+    <h1>Exercises</h1>
+    <div>
+      <h1>good bad example</h1>
+      <h1 class="{{ var }}">{{ var }}</h1>
+      <button onclick="clicko()" class="{{ var }}">this is {{ var }}</button>
+    </div>
+     
+    <div>
+      <h1>number example with a counter app</h1>
+      <button onclick="add()">+</button><button>{{ counter }}</button><button onclick="sub()">-</button>
+    </div>
+    <div>
+      <h1>array example with a todo list project</h1>
+      <input onchange="addTodo(event)">
+      {{ 
+        (arr)=>{
+        let arre=[];
+        arr.forEach((ele,i)=>{
+          arre.push(`
+          <p>${ele}</p>
+          <button onclick="remove(${i})">remove</button>
+          `)
+        })
+        return arre.join("")
+        } 
+      }}
+    </div>
+    <div>
+      <h1>boolean test</h1>
+      <button onclick="swap()">
+        {{ (bool)=> (bool===true) ? '<h1>big button true</h1>' : '<h3>small button false</h3>' }}
+      </button>
+    </div>
+
+    <script src="main.js"></script>
+  </body>
+</html>
