@@ -27,3 +27,8 @@ arr.index(1,"new value");
 arr.content
 
 ```
+
+## display
+```html
+<p>{{ arr[0] }}</p>
+```
