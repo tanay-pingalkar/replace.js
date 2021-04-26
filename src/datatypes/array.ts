@@ -42,13 +42,12 @@ export class Arr {
     replace(this.name, this.content);
   }
 
-  index(i: number): any {
+  index(i: number, content?: any): any {
+    if (content) {
+      this.content[i] = content;
+      replace(this.name, this.content);
+    }
     return this.content[i];
-  }
-
-  edit(i: number, content: any) {
-    this.content[i] = content;
-    replace(this.name, this.content);
   }
 
   length(): number {

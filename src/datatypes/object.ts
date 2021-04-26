@@ -21,4 +21,12 @@ export class Obj {
     this.content = content;
     replace(this.name, this.content);
   }
+
+  key(key: any, content?: any) {
+    if (content) {
+      eval(`this.content.${key}=content`);
+      replace(this.name, this.content);
+    }
+    return eval(`this.content.${key}`);
+  }
 }

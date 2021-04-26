@@ -10,6 +10,7 @@ const obj=new Obj("obj",{
   title:"this is title",
   description:"this is description"
 }) 
+
 async function main() {
   profile_photo.set("loading");
   let data = await fetch("https://randomuser.me/api/?results=1");
