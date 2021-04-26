@@ -1,3 +1,10 @@
+
+const template=new Template("temp",`
+<h1>object example</h1>
+<h2>{{ obj.title }}</h2>
+<h3>{{ obj.description }}</h3>
+`,
+)
 const user_name = new Str("user_name", "user_name");
 const profile_photo  = new Str("profile_photo");
 const bool = new Bool("bool");
@@ -9,7 +16,8 @@ const lol=new Arr("lol",[1])
 const obj=new Obj("obj",{
   title:"this is title",
   description:"this is description"
-}) 
+});
+
 
 async function main() {
   profile_photo.set("loading");

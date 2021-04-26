@@ -1,22 +1,15 @@
-import { Arr } from "./datatypes/array";
-import { Bool } from "./datatypes/boolean";
-import { Num } from "./datatypes/number";
-import { Str } from "./datatypes/string";
 import { init } from "./utils/init";
-import { multiReplace } from "./utils/multiReplace";
-import { replace } from "./utils/replace";
-import { Obj } from "./datatypes/object";
-
+export { Arr } from "./datatypes/array";
+export { Bool } from "./datatypes/boolean";
+export { Num } from "./datatypes/number";
+export { Str } from "./datatypes/string";
+export { init } from "./utils/init";
+export { multiReplace } from "./utils/multiReplace";
+export { replace } from "./utils/replace";
+export { Obj } from "./datatypes/object";
+export { Template } from "./datatypes/template";
 /*
 all function that are meant to be available globally and to the user
 */
-window.initialHTML = document.body.innerHTML;
+
 init();
-window.variables = [];
-window.Str = Str;
-window.replace = replace;
-window.Bool = Bool;
-window.Arr = Arr;
-window.multiReplace = multiReplace;
-window.Num = Num;
-window.Obj = Obj;

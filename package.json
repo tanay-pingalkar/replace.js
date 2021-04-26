@@ -11,7 +11,8 @@
     "test:pro": "npx jest --watch --coverage",
     "serve": "npx live-server --open=/example/index.html ",
     "serve:coverage": "npx live-server --open=/coverage/lcov-report/index.html ",
-    "preinstall": "npm i -g live-server"
+    "preinstall": "npm i -g live-server",
+    "build-pkg": "tsc --target es6 --outDir  ./build/ --moduleResolution node ./src/index.ts"
   },
   "devDependencies": {
     "@tanay-pingalkar/runner": "^1.5.0",
