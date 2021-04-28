@@ -12,6 +12,6 @@
 
 
 ## future v0.0.3
-- [ ] object support
-- [ ] unit testing in jest
+- [x] object support
+- [x] unit testing in jest
 - [x] es6 transformation
