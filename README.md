@@ -2,7 +2,7 @@
 
 ## a lightweight reactive frontend library
 
-![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/example/logo.png)
+![logo](https://github.com/tanay-pingalkar/replace.js/blob/main/playground/logo.png)
 
 ## index.html
 
@@ -42,7 +42,6 @@ function clicko() {
 
 ![video](https://github.com/tanay-pingalkar/replace.js/blob/main/example/Screencast%202021-04-19%2011%2033%2032.gif)
 
-
 ## conditions
 
 let see one more example, lets make a random user generator
@@ -51,20 +50,13 @@ let see one more example, lets make a random user generator
 
 ```html
 <body>
-  {{ 
-     (profile_photo)=>
-        (profile_photo==='loading')?
-        '<h1>loading</h1>' : 
-        `<img src="${profile_photo}" 
-        alt="photo"
-        height="100px" 
-        width="100px"/>` 
-   }}
+  {{ (profile_photo)=> (profile_photo==='loading')? '
+  <h1>loading</h1>
+  ' : `<img src="${profile_photo}" alt="photo" height="100px" width="100px" />`
+  }}
   <h1>{{ user_name }}</h1>
   <button onclick="main()">get random user</button>
-  <script
-    src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.3/dist/bundle.min.js"
-  ></script>
+  <script src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.3/dist/bundle.min.js"></script>
   <script src="main.js" type="text/javascript"></script>
 </body>
 ```
@@ -92,10 +84,12 @@ as you see this is how conditions works in replace.js, whenever you will change 
 condition will also run.
 
 ```javascript
-{{
+{
+  {
     (profile_photo) =>
       profile_photo === "loading" ? "./logo.svg" : profile_photo;
-}}
+  }
+}
 ```
 
 ```javscript
@@ -116,15 +110,10 @@ Currently the loops are not well polished and may doest look clean. We will see 
 - html
 
 ```html
-<input onchange="add(event)" />
-{{ 
-  (arr)=>{ 
-    let arre=[]; 
-    arr.forEach((ele,i)=>{ 
-      arre.push(`<p>${ele}</p><button onclick="remove(${i})">remove</button>`) 
-    }) 
-    return arre.join("") 
-} }}
+<input onchange="add(event)" /> {{ (arr)=>{ let arre=[]; arr.forEach((ele,i)=>{
+arre.push(`
+<p>${ele}</p>
+<button onclick="remove(${i})">remove</button>`) }) return arre.join("") } }}
 <script
   src="https://cdn.jsdelivr.net/gh/tanay-pingalkar/replace.js@v0.0.2/dist/bundle.min.js"
   type="text/javascript"
@@ -151,14 +140,20 @@ And here you go.... <br>
 <br>Dont worry I will work on loops.
 
 ## object
-``` html
-<h1>{{ heading.h1 }}<h1>
-<h2>{{ heading.h2 }}</h2>
+
+```html
+<h1>
+  {{ heading.h1 }}
+  <h1>
+    <h2>{{ heading.h2 }}</h2>
+  </h1>
+</h1>
 ```
-``` javascript
-const heading=new Obj("heading",{
-  h1:"this is h1 heading",
-  h2:"this is h2 heading"
+
+```javascript
+const heading = new Obj("heading", {
+  h1: "this is h1 heading",
+  h2: "this is h2 heading",
 });
 ```
 
@@ -189,8 +184,9 @@ this repo is open source and will live open source, contributers are highly welc
 - contribute to direct source code
 
 ## usage
+
 the purpose replace.js exists is to give you reactivity into html, it can be used like jquery or with jquery. It super charge vanilla html and javascript.
 
 ## philosophy
 
-The main goal I have to acheive making this is to provide you reactive variables straight into html.It is inspired from vue and svelte. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where. 
+The main goal I have to acheive making this is to provide you reactive variables straight into html.It is inspired from vue and svelte. I have to keep it simple, lightweight and reactive. With a gentle learining curve.The name of the library tells the core of the library. The dom manipulation is very different than other.It just replace `{{ variable_name }}` by your given content in document.body.innerHTML but with some tweaks. Thats how it is reactive and you dont have getElementById every where.
