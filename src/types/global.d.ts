@@ -18,6 +18,7 @@ declare global {
     Num: typeof Num;
     Obj: typeof Obj;
     Template: typeof templateClass;
+    onReplace: Function;
   }
 }
 

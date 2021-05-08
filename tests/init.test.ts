@@ -4,7 +4,7 @@ window.initialHTML =
 
 describe("gonna check if init works fine", () => {
   it("should replace all variables by empty string", () => {
-    init();
+    init(window.initialHTML);
     expect(document.body.innerHTML).toBe("<h1></h1><h1></h1><p></p>");
   });
 });

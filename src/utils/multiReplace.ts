@@ -53,4 +53,5 @@ export const multiReplace = (data: multireplaceType): void => {
   });
 
   document.body.innerHTML = html;
+  window.onReplace();
 };

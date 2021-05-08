@@ -12,7 +12,7 @@ import { replaceAllRegex } from "./regex";
 /*
 replace all variable to empty string 
 */
-export const init = (): void => {
+export const init = (html: string): void => {
   window.variables = [];
   window.Str = Str;
   window.replace = replace;
@@ -22,6 +22,7 @@ export const init = (): void => {
   window.Num = Num;
   window.Obj = Obj;
   window.Template = Template;
-  window.initialHTML = document.body.innerHTML;
+  window.initialHTML = html;
+  window.onReplace = () => {};
   document.body.innerHTML = window.initialHTML.replace(replaceAllRegex, "");
 };

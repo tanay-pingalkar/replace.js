@@ -12,4 +12,4 @@ export { Template } from "./datatypes/template";
 all function that are meant to be available globally and to the user
 */
 
-init();
+init(document.body.innerHTML);

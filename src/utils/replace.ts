@@ -6,7 +6,7 @@ content , it also do a great job by resolving all condition's  and
 functions. PLease change this code very carefully, a missing symbol can 
 cause big error cause it the heart of the program.
 */
-export const replace = (name: string, content: any): void => {
+export const replace = (name?: string, content?: any): void => {
   let html: string = window.initialHTML;
   window.variables.forEach((element, i) => {
     let newContent: string;
@@ -51,5 +51,7 @@ export const replace = (name: string, content: any): void => {
       });
     }
   });
+
   document.body.innerHTML = html;
+  window.onReplace();
 };
