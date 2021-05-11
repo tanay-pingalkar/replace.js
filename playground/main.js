@@ -3,6 +3,7 @@ let innerH = `
 <h1 style="color:{{ color }}">{{ title }}</h1>
 <button onclick="gen()">generate</button>
 `;
+
 let innerjs = `
 const random_hex_color_code = () => {
   let n = (Math.random() * 0xfffff * 1000000).toString(16);
@@ -16,18 +17,18 @@ window.gen=()=>{
 }
 
 `;
-
-document.getElementById("html").value = innerH;
-document.getElementById("js").value = innerjs;
+let ed;
+let ed2;
 window.onReplace = () => {
-  document.getElementById("html").value = innerH;
   document.getElementById("js").value = innerjs;
-  CodeMirror.fromTextArea(document.getElementById("html"), {
+  document.getElementById("html").value = innerH;
+  ed = CodeMirror.fromTextArea(document.getElementById("html"), {
     lineNumbers: true,
     mode: "xml",
     theme: theme,
   });
-  CodeMirror.fromTextArea(document.getElementById("js"), {
+
+  ed2 = CodeMirror.fromTextArea(document.getElementById("js"), {
     lineNumbers: true,
     mode: "javascript",
     theme: theme,
@@ -43,8 +44,8 @@ const mode = new Obj("mode", {
 });
 
 function toggle() {
-  innerH = document.getElementById("html").value;
-  innerjs = document.getElementById("js").value;
+  innerH = ed.getValue();
+  innerjs = ed2.getValue();
   if (theme === "blackboard") {
     theme = "base16-light";
   } else {
@@ -69,13 +70,10 @@ function toggle() {
   }
 }
 
-let script = document.createElement("script");
-document.body.append(script);
-
 const template = new Template("template", "");
 function tempChange() {
-  innerH = document.getElementById("html").value;
-  innerjs = document.getElementById("js").value;
+  innerH = ed.getValue();
+  innerjs = ed2.getValue();
   template.set(innerH);
   eval(innerjs);
 }
