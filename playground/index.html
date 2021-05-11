@@ -4,16 +4,23 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="style.css" rel="stylesheet" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/xml/xml.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/mode/javascript/javascript.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/theme/blackboard.min.css"></link>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.61.0/theme/base16-light.min.css"></link>
     <link rel="icon" href="./logo.png" sizes="128x128" type="image/png" />
+    <link href="style.css" rel="stylesheet" />
     <title>Playground</title>
   </head>
   <body>
     <nav
       style="
       color: {{ mode.color }}; 
-      border-bottom: 2px solid {{ mode.color }};
       background: {{ mode.nav }}"
     >
       <div class="title">
@@ -48,24 +55,31 @@
     </nav>
     <div class="real">
       <div class="flex">
+        <p style="
+          color:{{ mode.color }};
+          background:{{ (mode)=>mode.name=='night' ? '#260033' : '#00b3b3' }};
+          padding:5px;
+        ">Html</p>
         <textarea
           spellcheck="false"
           style="
-            background-color: {{ mode.bg }};
-            color:{{ mode.color }};
             border-right: 2px solid  {{ mode.color }};
-            border-bottom: 2px solid  {{ mode.color }};"
+            border-bottom: 2px solid  {{ mode.color }};
+            "
           id="html"
         >
         </textarea>
+        <p style="
+          color:{{ mode.color }};
+          background:{{ (mode)=>mode.name=='night' ? '#260033' : '#00b3b3' }};
+          padding:5px;
+        ">javascript</p>
         <textarea
           spellcheck="false"
           style="
-        background-color: {{ mode.bg }};
-        color:{{ mode.color }};
-        border-right: 2px solid {{ mode.color }};
-        border-bottom: 2px solid {{ mode.color }};
-        "
+            border-right: 2px solid {{ mode.color }};
+            border-bottom: 2px solid {{ mode.color }};
+        "   
           id="js"
         ></textarea>
       </div>
@@ -76,11 +90,11 @@
       class="run"
       onclick="tempChange()"
       style="
-    background-color: {{ mode.button }};
-    color:{{ mode.color }}
+          background-color: {{ mode.button }};
+          color:{{ mode.color }}
     "
     >
-      run
+      >
     </button>
 
     <script

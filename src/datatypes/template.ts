@@ -26,12 +26,12 @@ export class Template {
     this.html.content = html;
     replace();
   }
-  // repeat(num: number) {
-  //   this.html.content = this.html.content.repeat(num);
-  //   window.initialHTML = window.initialHTML.replace(
-  //     keyWordRegex(this.html.name),
-  //     this.html.content
-  //   );
-  //   replace();
-  // }
+  repeat(num: number) {
+    this.html.content = this.html.content.repeat(num);
+    window.initialHTML = this.initial.replace(
+      keyWordRegex(this.html.name),
+      this.html.content
+    );
+    replace();
+  }
 }
